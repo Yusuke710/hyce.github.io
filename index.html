@@ -1,0 +1,273 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta charset="utf-8">
+  <meta name="description" content="LLM as HPC Expert: Extending RAG Architecture for HPC Data">
+  <meta name="keywords" content="RAG, Agent, Generative AI, LLM, HPC">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>LLM as HPC Expert</title>
+
+  <!-- Google tag (gtag.js) -->
+  <script async src="https://www.googletagmanager.com/gtag/js?id=G-N4R4XMGYC2"></script>
+  <script>
+    window.dataLayer = window.dataLayer || [];
+    function gtag(){ dataLayer.push(arguments); }
+    gtag('js', new Date());
+    gtag('config', 'G-N4R4XMGYC2');
+  </script>
+
+  <!-- Fonts and CSS -->
+  <link href="https://fonts.googleapis.com/css?family=Google+Sans|Noto+Sans|Castoro" rel="stylesheet">
+  <link rel="stylesheet" href="./static/css/bulma.min.css">
+  <link rel="stylesheet" href="./static/css/bulma-carousel.min.css">
+  <link rel="stylesheet" href="./static/css/bulma-slider.min.css">
+  <link rel="stylesheet" href="./static/css/fontawesome.all.min.css">
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/gh/jpswalsh/academicons@1/css/academicons.min.css">
+  <link rel="stylesheet" href="./static/css/index.css">
+
+  <!-- JS (jQuery, Bulma extras, etc.) -->
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+  <script defer src="./static/js/fontawesome.all.min.js"></script>
+  <script src="./static/js/bulma-carousel.min.js"></script>
+  <script src="./static/js/bulma-slider.min.js"></script>
+  <script src="./static/js/index.js"></script>
+</head>
+<body>
+
+<!-- Navbar -->
+<nav class="navbar" role="navigation" aria-label="main navigation">
+  <div class="navbar-brand">
+    <a role="button" class="navbar-burger" aria-label="menu" aria-expanded="false">
+      <span aria-hidden="true"></span>
+      <span aria-hidden="true"></span>
+      <span aria-hidden="true"></span>
+    </a>
+  </div>
+</nav>
+
+<!-- Hero Section -->
+<section class="hero is-light">
+  <div class="hero-body">
+    <div class="container is-max-desktop">
+      <div class="columns is-centered">
+        <div class="column has-text-centered">
+          <h1 class="title is-1 publication-title">LLM as HPC Expert: Extending RAG Architecture for HPC Data</h1>
+          <h3 class="title is-4 conference-authors">
+            <a target="_blank" href="https://sca25.sc-asia.org/">SCA2025</a>
+          </h3>
+          <div class="is-size-5 publication-authors">
+            <span class="author-block">
+              <a target="_blank" href="https://yusuke710.github.io/Contextofolio.github.io/">Yusuke Miyashita</a><sup>1</sup>,
+            </span>
+            <span class="author-block">
+              <a target="_blank" href="https://scholar.google.com/citations?user=pfio6XEAAAAJ&hl=en">Patrick Kin Man Tung</a><sup>1</sup>,
+            </span>
+            <span class="author-block">
+              <a target="_blank" href="https://scholar.google.be/citations?user=AM9-E50AAAAJ&hl=fr">Johan Barthélemy</a><sup>2</sup>
+            </span>
+          </div>
+          <div class="is-size-5 publication-authors">
+            <span class="author-block"><sup>1</sup>University of New South Wales,</span>
+            <span class="author-block"><sup>2</sup>NVIDIA</span>
+          </div>
+
+          <div class="publication-links" style="margin-top: 1em;">
+            <span class="link-block" style="margin-right: 0.5em;">
+              <a target="_blank" href="https://drive.google.com/file/d/12wuMC6oHNjZ5MElthz19BG40glW6Psoj/view?usp=sharing"
+                 class="external-link button is-normal is-rounded is-dark">
+                <span class="icon">
+                  <i class="ai ai-arxiv"></i>
+                </span>
+                <span>Paper</span>
+              </a>
+            </span>
+            <span class="link-block" style="margin-right: 0.5em;">
+              <a target="_blank" href=""
+                 class="external-link button is-normal is-rounded is-dark">
+                <span class="icon">
+                  <i class="fas fa-file-pdf"></i>
+                </span>
+                <span>Poster</span>
+              </a>
+            </span>
+            <span class="link-block">
+              <a target="_blank" href="https://github.com/Yusuke710/llm_rag_eval_hpc"
+                 class="external-link button is-normal is-rounded is-dark">
+                <span class="icon">
+                  <i class="fab fa-github"></i>
+                </span>
+                <span>Code</span>
+              </a>
+            </span>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- Introduction / Problem Statement -->
+<section class="section">
+  <div class="container is-max-desktop">
+    <div class="columns is-centered">
+      <div class="column is-10">
+        <div class="content has-text-justified">
+          <p>
+            People often face a steep learning curve when using HPC systems, such as understanding the structure of the HPC cluster
+            and mastering the commands required to navigate it.
+          </p>
+        </div>
+      </div>
+    </div>
+
+    <div class="columns is-centered has-text-centered">
+      <div class="column is-two-thirds">
+        <img src="https://yusuke710.github.io/hyce.github.io/media/images/1.png" alt="People Asking Questions" style="max-width: 100%;">
+      </div>
+    </div>
+
+
+    <div class="column is-10">
+      <div class="content has-text-justified">
+        <p>
+          Consequently, users frequently direct their queries to the help desk,
+          which can quickly become overwhelmed with repetitive questions. Maintaining a team of HPC experts for 24/7 support is
+          also costly and inefficient.
+        </p>
+      </div>
+    </div>
+  </div>
+
+  <div class="columns is-centered has-text-centered">
+    <div class="column is-two-thirds">
+      <img src="https://yusuke710.github.io/hyce.github.io/media/images/2_v1.png" alt="People Asking Questions" style="max-width: 100%;">
+    </div>
+  </div>
+
+    <div class="columns is-centered">
+      <div class="column is-10">
+        <div class="content has-text-justified">
+          <p>
+            An ideal solution is to replace the help desk with an AI system capable of operating 24/7 while providing fast responses.
+            Retrieval-Augmented Generation (RAG) systems, which integrate proprietary data with large language models (LLMs), are a
+            promising option. However, for HPC systems, simply feeding documents to a RAG system is insufficient since
+            many queries require real-time execution of commands to retrieve specific cluster information. The challenge, therefore,
+            is: how can we effectively combine RAG with command-line interfaces (CLI)?
+          </p>
+        </div>
+      </div>
+    </div>
+
+    <div class="columns is-centered has-text-centered">
+      <div class="column is-two-thirds">
+        <img src="https://yusuke710.github.io/hyce.github.io/media/images/3.png" alt="RAG + CLI??" style="max-width: 100%;">
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- Our Solution: HyCE -->
+<section class="section">
+  <div class="container is-max-desktop">
+    <h2 class="title is-4">Solution: Hypothetical Command Embeddings (HyCE)</h2>
+
+    <div class="columns is-centered has-text-centered" style="margin-bottom: 1em;">
+      <div class="column is-10">
+        <figure>
+          <img src="https://yusuke710.github.io/hyce.github.io/media/images/rag_overview.png" alt="RAG overview with HyCE" style="max-width: 80%;">
+        </figure>
+      </div>
+    </div>
+    <div class="columns is-centered">
+      <div class="column is-10">
+        <div class="content has-text-justified">
+          <p>
+            Our proposed system enhances traditional RAG architectures by incorporating Hypothetical Command Embeddings (HyCE).
+            This approach retrieves command descriptions based on user queries, executes the appropriate commands, and integrates
+            the resulting output into the LLM’s context. By combining RAG with real-time command execution, HyCE enables
+            precise and efficient answers tailored to HPC-specific queries.
+          </p>
+        </div>
+      </div>
+    </div>
+
+    <h3 class="title is-5">Thought Process Behind HyCE</h3>
+    <div class="columns is-centered">
+      <div class="column is-10">
+        <div class="content has-text-justified">
+          <ul>
+            <li><strong>Naive Approach:</strong> Run all commands and index their outputs for retrieval. This method is inefficient
+              since executing all possible commands for every query is time-consuming.</li>
+            <li><strong>Improved Approach:</strong> Embed each command for retrieval and execute only the retrieved commands in real time.</li>
+            <li><strong>HyCE:</strong> Instead of embedding raw command names, HyCE embeds detailed command descriptions. When a
+              relevant description is retrieved, the corresponding command is executed, ensuring both efficiency and accuracy.
+            </li>
+          </ul>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- Results -->
+<section class="section">
+  <div class="container is-max-desktop">
+    <h2 class="title is-3">Results</h2>
+
+    <h3 class="title is-4">Qualitative Results</h3>
+    <div class="columns is-centered has-text-centered" style="margin-bottom: 2rem;">
+      <div class="column is-10">
+        <figure>
+          <img src="https://yusuke710.github.io/hyce.github.io/media/images/qualitative_result.png" alt="Qualitative result of HyCE" style="max-width: 100%;">
+          <figcaption style="margin-top: 1rem;">
+            Unlike standard RAG responses, HyCE-powered RAG can address user-specific HPC queries with greater precision by running
+            the necessary commands and using their outputs to generate accurate answers.
+          </figcaption>
+        </figure>
+      </div>
+    </div>
+
+    <h3 class="title is-4">Quantitative Results</h3>
+    <div class="columns is-centered has-text-centered">
+      <div class="column is-10">
+        <figure>
+          <img src="https://yusuke710.github.io/hyce.github.io/media/images/quantitative_result.png" alt="Quantitative result of HyCE" style="max-width: 100%;">
+          <figcaption style="margin-top: 1rem;">
+            Our HPC-augmented RAG system, integrating HyCE, Chain-of-Thought (CoT) prompting, and improved model selection,
+            demonstrates substantial performance improvements. HyCE alone boosts RAG performance by 4.66%, with further gains
+            achieved by combining CoT and enhanced models.
+          </figcaption>
+        </figure>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- BibTeX -->
+<section class="section" id="BibTeX">
+  <div class="container is-max-widescreen content">
+    <h2 class="title">BibTeX</h2>
+    <pre><code>
+</code></pre>
+  </div>
+</section>
+
+<!-- Footer -->
+<footer class="footer">
+  <div class="container">
+    <div class="columns is-centered">
+      <div class="column is-8">
+        <div class="content has-text-centered">
+          <p>
+            Website template adapted from 
+            <a href="https://github.com/nerfies/nerfies.github.io">NeRFies</a> by 
+            <a href="https://keunhong.com/">Keunhong Park</a>.
+          </p>
+        </div>
+      </div>
+    </div>
+  </div>
+</footer>
+
+</body>
+</html>
