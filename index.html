@@ -82,7 +82,7 @@
               </a>
             </span>
             <span class="link-block" style="margin-right: 0.5em;">
-              <a target="_blank" href=""
+              <a target="_blank" href="https://drive.google.com/file/d/19t-G7Pjtcs4TghpNhqW77G-AV_k0hXAU/view?usp=sharing"
                  class="external-link button is-normal is-rounded is-dark">
                 <span class="icon">
                   <i class="fas fa-file-pdf"></i>
@@ -109,7 +109,7 @@
 <!-- Introduction / Problem Statement -->
 <section class="section">
   <div class="container is-max-desktop">
-    <div class="columns is-centered">
+    <div class="columns is-centered has-text-centered">
       <div class="column is-10">
         <div class="content has-text-justified">
           <p>
@@ -126,7 +126,7 @@
       </div>
     </div>
 
-
+    <div class="columns is-centered has-text-centered">
     <div class="column is-10">
       <div class="content has-text-justified">
         <p>
@@ -136,6 +136,7 @@
         </p>
       </div>
     </div>
+    </div>
   </div>
 
   <div class="columns is-centered has-text-centered">
@@ -144,7 +145,7 @@
     </div>
   </div>
 
-    <div class="columns is-centered">
+  <div class="columns is-centered has-text-centered">
       <div class="column is-10">
         <div class="content has-text-justified">
           <p>
@@ -174,7 +175,7 @@
     <div class="columns is-centered has-text-centered" style="margin-bottom: 1em;">
       <div class="column is-10">
         <figure>
-          <img src="https://yusuke710.github.io/hyce.github.io/media/images/rag_overview.png" alt="RAG overview with HyCE" style="max-width: 80%;">
+          <img src="https://yusuke710.github.io/hyce.github.io/media/images/rag_overview.png" alt="RAG overview with HyCE" style="max-width: 100%;">
         </figure>
       </div>
     </div>
@@ -200,7 +201,7 @@
               since executing all possible commands for every query is time-consuming.</li>
             <li><strong>Improved Approach:</strong> Embed each command for retrieval and execute only the retrieved commands in real time.</li>
             <li><strong>HyCE:</strong> Instead of embedding raw command names, HyCE embeds detailed command descriptions. When a
-              relevant description is retrieved, the corresponding command is executed, ensuring both efficiency and accuracy.
+              relevant description is retrieved, the corresponding command is executed and the command outputis included in the context of the LLM, ensuring both efficiency and accuracy.
             </li>
           </ul>
         </div>
@@ -220,7 +221,7 @@
         <figure>
           <img src="https://yusuke710.github.io/hyce.github.io/media/images/qualitative_result.png" alt="Qualitative result of HyCE" style="max-width: 100%;">
           <figcaption style="margin-top: 1rem;">
-            Unlike standard RAG responses, HyCE-powered RAG can address user-specific HPC queries with greater precision by running
+            Unlike standard RAG responses, HyCE-incorporated RAG can address user-specific HPC queries with greater precision by running
             the necessary commands and using their outputs to generate accurate answers.
           </figcaption>
         </figure>
@@ -248,6 +249,11 @@
   <div class="container is-max-widescreen content">
     <h2 class="title">BibTeX</h2>
     <pre><code>
+      @inproceedings{Miyashita2025LLMasHPCexpert
+        author    = {Miyashita, Yusuke and Patrick Kin Man, Tung and Johan, Barthélemy},
+        title     = {LLM as HPC Expert: Extending RAG Architecture for HPC Data},
+        conference = {},
+        year      = {2025},
 </code></pre>
   </div>
 </section>
