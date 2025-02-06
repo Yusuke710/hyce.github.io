@@ -4,12 +4,15 @@ This is the repository that contains source code for the [HyCE website](https://
 
 If you find HyCE useful for your work please cite:
 ```
-@inproceedings{Miyashita2023ROSO
-  author    = {Miyashita, Yusuke and },
-  title     = {LLM as HPC Expert: Extending RAG Architecture for HPC Data},
-  conference = {},
-  year      = {2025},
-}
+ @misc{miyashita2024llmhpcexpertextending,
+        title={LLM as HPC Expert: Extending RAG Architecture for HPC Data}, 
+        author={Yusuke Miyashita and Patrick Kin Man Tung and Johan Barthélemy},
+        year={2024},
+        eprint={2501.14733},
+        archivePrefix={arXiv},
+        primaryClass={cs.DC},
+        url={https://arxiv.org/abs/2501.14733}, 
+  }
 ```
 
 # Website License
